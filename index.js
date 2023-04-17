@@ -1,5 +1,5 @@
 import { extname } from 'path'
-import { readFileSync, readdirSync } from 'fs'
+import { readFileSync, readdirSync, existsSync, mkdirSync } from 'fs'
 import { deleteSync } from 'del'
 import matter from 'gray-matter'
 import puppeteer from 'puppeteer'
@@ -20,9 +20,13 @@ function getFileList() {
 		})
 }
 
+function createDir() {
+	if (!existsSync(options.ogDir)) mkdirSync(options.ogDir)
+}
+
 // * === del ===
 function deleteExisting() {
-	deleteSync(`${options.ogDir}/*`)
+	deleteSync(options.ogDir)
 	console.log(`✅ Deleted existing files in ${options.ogDir}`)
 }
 
@@ -123,6 +127,7 @@ async function generateImages() {
 
 async function main() {
 	deleteExisting()
+	createDir()
 	await generateImages()
 }
 
