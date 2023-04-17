@@ -24,5 +24,6 @@ jobs:
                   REPO: self
                   BRANCH: gh-pages
                   FOLDER: assets
+                  TARGET_DIR: assets
                   MESSAGE: 'Generate Open Graph Images 🤖'
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
