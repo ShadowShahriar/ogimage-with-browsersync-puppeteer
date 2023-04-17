@@ -1,5 +1,4 @@
 # @format
-
 name: Generate Open Graph Images
 
 on:
@@ -7,27 +6,22 @@ on:
         branches: [main]
 
 jobs:
-    generate_files:
+    generate_ogimages:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3.5.2
-            - uses: actions/setup-node@v1
+            - name: setup node
+              uses: actions/setup-node@v1
               with:
                   node-version: 17
-            - uses: actions/cache@v2
-              with:
-                  path: '**/node_modules'
-                  key: node_modules-${{ hashFiles('**/package-lock.json')}}
-            - uses: tj-actions/puppeteer@v4
-              id: puppeteer
-              with:
-                  files: |
-                      index.js
-            - run: |
-                  npm ci --ignore-scripts
+            - name: npm install
+              run: npm ci
+            - name: generate images
+              run: node index.js
+            - name: push to GitHub
+              run: |
                   git config --global user.name "github-actions[bot]"
                   git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-                  node index.js
                   git add assets/opengraph
                   git commit -m "Generate Open Graph Images 🤖"
                   git push
