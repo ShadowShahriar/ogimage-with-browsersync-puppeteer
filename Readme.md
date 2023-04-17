@@ -9,13 +9,13 @@ Generated Images from [src/posts](./src/posts) are stored in [assets/opengraph](
 Install NPM dependencies by entering,
 
 ```bash
-	npm install
+npm install
 ```
 
 Then run the following command,
 
 ```bash
-	node index.js
+node index.js
 ```
 
 It should generate Open Graph Images in the [opengraph](./assets/opengraph) folder.
