@@ -20,14 +20,15 @@ function getFileList() {
 		})
 }
 
-function createDir() {
-	if (!existsSync(options.ogDir)) mkdirSync(options.ogDir)
+function createDir(dir) {
+	if (!existsSync(dir)) mkdirSync(dir)
+	console.log(`✅ Created folder: ${dir}`)
 }
 
 // * === del ===
 function deleteExisting() {
 	deleteSync(options.ogDir)
-	console.log(`✅ Deleted existing files in ${options.ogDir}`)
+	console.log(`✅ Deleted existing folder: ${options.ogDir}`)
 }
 
 // * === gray-matter ===
@@ -127,7 +128,8 @@ async function generateImages() {
 
 async function main() {
 	deleteExisting()
-	createDir()
+	createDir(options.ogDir.split('/')[0])
+	createDir(options.ogDir)
 	await generateImages()
 }
 
