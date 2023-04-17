@@ -7,7 +7,7 @@ const options = {
 	ogDir: 'assets/opengraph',
 	ogImageWidth: 1280,
 	ogImageHeight: 640,
-	ogImageExt: 'jpg'
+	ogImageExt: 'png'
 }
 
 export default options
