@@ -9,9 +9,8 @@ on:
 jobs:
     generate_files:
         runs-on: ubuntu-latest
-        container: lironavon/docker-puppeteer-container:14.16.0
         steps:
-            - uses: actions/checkout@v2
+            - uses: actions/checkout@v3.5.2
             - uses: actions/setup-node@v1
               with:
                   node-version: 17
@@ -19,6 +18,11 @@ jobs:
               with:
                   path: '**/node_modules'
                   key: node_modules-${{ hashFiles('**/package-lock.json')}}
+            - uses: tj-actions/puppeteer@v4
+              id: puppeteer
+              with:
+                  files: |
+                      index.js
             - run: |
                   npm ci --ignore-scripts
                   git config --global user.name "github-actions[bot]"
