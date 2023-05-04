@@ -1,0 +1,26 @@
+{
+	"name": "ogimage-with-browsersync-puppeteer",
+	"version": "0.0.1",
+	"description": "Creating Open Graph Images for Blog Posts using Browsersync and Puppeteer",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "node index"
+	},
+	"keywords": [
+		"opengraph",
+		"og",
+		"puppeteer",
+		"js",
+		"browser-sync",
+		"github-actions"
+	],
+	"author": "S. Shahriar",
+	"license": "MIT",
+	"dependencies": {
+		"browser-sync": "^2.29.1",
+		"del": "^7.0.0",
+		"gray-matter": "^4.0.3",
+		"puppeteer": "^19.9.0"
+	}
+}

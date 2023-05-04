@@ -1,0 +1,57 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+body {
+	font-family: 'oxygen-web';
+	font-weight: bold;
+	display: grid;
+	place-items: center;
+}
+
+main {
+	position: relative;
+	width: 1280px;
+	height: 640px;
+	display: grid;
+	place-items: center;
+}
+
+#ogImage {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+#title {
+	position: relative;
+	font-size: 100px;
+	z-index: 5;
+	color: white;
+	text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+main::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(circle at 20% 20%, blue, red);
+	mix-blend-mode: color;
+	display: block;
+}
