@@ -21,6 +21,6 @@
 		"browser-sync": "^3.0.2",
 		"del": "^7.0.0",
 		"gray-matter": "^4.0.3",
-		"puppeteer": "^19.9.0"
+		"puppeteer": "^22.11.2"
 	}
 }
