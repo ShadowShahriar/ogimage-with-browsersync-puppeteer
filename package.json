@@ -18,7 +18,7 @@
 	"author": "S. Shahriar",
 	"license": "MIT",
 	"dependencies": {
-		"browser-sync": "^3.0.2",
+		"browser-sync": "^3.0.3",
 		"del": "^7.0.0",
 		"gray-matter": "^4.0.3",
 		"puppeteer": "^22.11.2"
